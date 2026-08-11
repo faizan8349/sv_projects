@@ -136,3 +136,83 @@
 
 
 
+// ==============================function inside module called inside fork join_none ================//
+
+  
+//module m;
+  
+//   int a;
+  
+//   function automatic int f1();
+    
+//     int a;
+    
+//     a++;
+    
+//     $display("a=%d",a);
+    
+//   endfunction 
+  
+//   initial 
+//     begin 
+      
+//       fork
+        
+//         f1();
+//         f1();
+//         f1();
+        
+//       join_any
+   
+//       fork
+//         f1();
+        
+//       join_any
+//     end 
+  
+// endmodule 
+
+
+// =======================function declared inside class called inside module in fork join_any 
+
+// class c ;
+  
+  
+//   int a;
+  
+//  static function static   int f1();
+    
+//     int a;
+    
+//     a++;
+    
+//     $display("a=%d",a);
+    
+//   endfunction 
+  
+// endclass 
+
+// module m;
+//   c c1;
+  
+  
+//   initial 
+//     begin 
+  
+// //       c1=new;
+      
+//       fork
+        
+//         c1.f1();
+//         c1.f1();
+//         c1.f1();
+        
+//       join_any
+   
+//       fork
+//         c1.f1();
+        
+//       join_any
+//     end 
+  
+// endmodule 
